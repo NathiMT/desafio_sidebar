@@ -62,7 +62,7 @@ ul {
     padding: 1px 0px 1px 16px;
 }
 
-.menu-item button {
+.menu-item a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -70,9 +70,13 @@ ul {
     width: 222px;
     height: 51px;
     padding: 1px 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.menu-item button:hover {
+.menu-item a:hover {
     background-color: #8ED7C6;
     border-radius: 12px;
     border: none;
@@ -82,9 +86,11 @@ ul {
 .user {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: .8rem;
+    padding-left: 8px;
     background-color: #8ED7C6;
     height: 60px;
+    max-width: 100%;
 }
 
 .profile-picture {
