@@ -13,6 +13,7 @@ body {
 main {
     background-color: #dce4e3;
     width: 100vw;
+    z-index: 10;
 }
 
 main h1 {
@@ -27,6 +28,11 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    z-index: 10;
+}
+
+nav.inactive {
+    width: 80px;
 }
 
 .menu {
@@ -36,6 +42,10 @@ nav {
     justify-content: space-between;
 }
 
+nav.inactive .menu {
+    position: fixed;
+}
+
 .menu button {
     display: flex;
     align-items: center;
@@ -43,6 +53,11 @@ nav {
     border-radius: 12px;
     border: none;
     cursor: pointer;
+}
+
+nav.inactive .menu button {
+    position: absolute;
+    left: 20px;
 }
 
 ul {
@@ -62,6 +77,10 @@ ul {
     padding: 1px 0px 1px 16px;
 }
 
+nav.inactive .first-item .logo {
+    opacity: 0;
+}
+
 .menu-item a {
     display: flex;
     align-items: center;
@@ -76,11 +95,20 @@ ul {
     text-decoration: none;
 }
 
+nav.inactive .menu-item a span {
+    opacity: 0;
+}
+
 .menu-item a:hover {
     background-color: #8ED7C6;
     border-radius: 12px;
     border: none;
     transition: .5s;
+}
+
+nav.inactive .menu-item a:hover {
+    width: 57px;
+    transition: none;
 }
 
 .user {
@@ -91,6 +119,12 @@ ul {
     background-color: #8ED7C6;
     height: 60px;
     max-width: 100%;
+    padding-left: 15px;
+}
+
+nav.inactive .user {
+    position: absolute;
+    bottom: 0;
 }
 
 .profile-picture {
@@ -99,6 +133,11 @@ ul {
     object-fit: cover;
     object-position: -4px;
     border-radius: 12px;
+}
+
+nav.inactive .profile-picture {
+    position: absolute;
+    left: 15px;
 }
 
 .user-infos h3{
@@ -119,4 +158,10 @@ ul {
     background-color: #8ED7C6;
     border: none;
     cursor: pointer;
+}
+
+nav.inactive .user h3,
+nav.inactive .user p,
+nav.inactive .user button {
+    opacity: 0;
 }
